@@ -7,8 +7,14 @@ const user = new User({ name: 'myname', age: 20 });
 // console.log(user.get('name'));
 // console.log(user.get('age'));
 
-user.on('change', () => {});
-user.on('click', () => {});
-user.on('asdfad', () => {});
+user.on('change', () => {
+  console.log('change number 1');
+});
+user.on('click', () => {
+  console.log('change number 2');
+});
+user.on('change', () => {
+  console.log('change number 3');
+});
 
-console.log(user.events);
+user.trigger('click');
