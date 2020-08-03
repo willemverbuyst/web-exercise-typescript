@@ -1,20 +1,12 @@
 import { User } from './models/User';
 
-const user = new User({ name: 'myname', age: 20 });
+const user = new User({ id: 2 });
 
-// user.set({ age: 999 });
+user.fetch();
 
-// console.log(user.get('name'));
-// console.log(user.get('age'));
+setTimeout(() => {
+  console.log(user);
+}, 4000);
 
-user.on('change', () => {
-  console.log('change number 1');
-});
-user.on('click', () => {
-  console.log('change number 2');
-});
-user.on('change', () => {
-  console.log('change number 3');
-});
-
-user.trigger('click');
+user.set({ age: 100 });
+user.save();
