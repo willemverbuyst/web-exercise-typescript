@@ -9,4 +9,9 @@ const user = new User({ name: 'sjaak', age: 80808 });
 // }, 4000);
 
 // user.set({ age: 100 });
-user.save();
+
+user.events.on('Change', () => {
+  console.log('change!');
+});
+
+user.events.trigger('Change');
