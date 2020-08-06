@@ -10,8 +10,12 @@ const user = new User({ name: 'sjaak', age: 80808 });
 
 // user.set({ age: 100 });
 
-user.events.on('Change', () => {
-  console.log('change!');
-});
+// user.events.on('Change', () => {
+//   console.log('change!');
+// });
 
-user.events.trigger('Change');
+// user.events.trigger('Change');
+
+user.on('change', () => {
+  console.log('user was changed');
+});
